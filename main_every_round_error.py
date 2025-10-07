@@ -1,9 +1,9 @@
 import pandas as pd
 from tqdm import tqdm
 
-from every_round_error import ERROR_FEEDBACK_PHASES
+from Feedback.every_round_error import ERROR_FEEDBACK_PHASES
 from persona_specifc_prompt import generate_summary
-from error_feedback import generate_summary_with_feedback_error
+from Feedback.error_feedback import generate_summary_with_feedback_error
 from agents import OpenAIAgent, GeminiAIAgent, MistralAIAgent, LlamaAgent
 
 def rotate_list(items, n):

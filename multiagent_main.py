@@ -1,14 +1,14 @@
 import pandas as pd
 from tqdm import tqdm
-from persona_specifc_prompt import (
+from Feedback.persona_specifc_prompt import (
     generate_summary,
     feedback_summary,
     generate_summary_with_feedback)
-from error_feedback import (detect_errors, generate_summary_with_feedback_error)
+from Feedback.error_feedback import (detect_errors, generate_summary_with_feedback_error)
 from agents import OpenAIAgent, GeminiAIAgent, MistralAIAgent, LlamaAgent
 
 
-from every_round_error import ERROR_FEEDBACK_PHASES
+from Feedback.every_round_error import ERROR_FEEDBACK_PHASES
 
 def every_round_error_dispatcher(summary, abstract, agent, persona, round_number):
     persona = persona.lower()
