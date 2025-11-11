@@ -11,10 +11,10 @@ def generate_summaries(
     mode="zero-shot"
 ):
     """
-    Generate summaries for each abstract in the input file using specified agents/persona/mode.
+    Generate summaries for each abstract in the input file using specified agent,persona and mode.
 
     Parameters:
-        agents: list of agent objects (must have .generate_answer(context))
+        agents: list of agent objects
         input_file: path to CSV file with 'abstract' or 'text' column
         output_file: path to save the output CSV
         persona: "expert", "researcher", "premed", or "layman"
@@ -23,7 +23,7 @@ def generate_summaries(
     df = pd.read_csv(input_file)
     if "abstract" in df.columns:
         abstracts = df["abstract"].tolist()
-        abstracts = abstracts[:2]
+        #abstracts = abstracts[:]
     elif "text" in df.columns:
         abstracts = df["text"].tolist()
     else:
@@ -54,13 +54,13 @@ def generate_summaries(
 
 if __name__ == "__main__":
     # ==== USER SETTINGS ====
-    input_file = "input_demo.csv"
-    output_file = "summaries_output_self.csv"
-    persona = "expert"         # Choose: "expert", "researcher", "premed", "layman"
-    mode = "self-refine"          # Choose: "zero-shot", "few-shot", or "self-refine"
+    input_file = "input.csv"
+    output_file = "output.csv"
+    persona = "layman"         # Choose: "expert", "researcher", "premed", "layman"
+    mode = "few-shot"          # Choose: "zero-shot", "few-shot", or "self-refine"
 
     agents = [
-        OpenAIAgent(model="gpt-4o"),
+         OpenAIAgent(model="gpt-4o"),
         GeminiAIAgent(model="google/gemini-2.0-flash-lite-001"),
         MistralAIAgent(model="mistralai/mixtral-8x7b-instruct"),
         LlamaAgent(model="meta-llama/llama-3.3-70b-instruct"),
