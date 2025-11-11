@@ -1,4 +1,4 @@
-# 🧬 PERCS Benchmark Code
+# PERCS-Dataset
 
 ## Overview
 This repository contains the code for **PERCS**, a dataset of **500 biomedical abstracts** paired with persona-specific summaries designed to make biomedical research more accessible across varying levels of medical literacy.
