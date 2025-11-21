@@ -15,7 +15,7 @@ This repository contains the code for **PERCS**, a dataset of **500 biomedical a
 
 The **PERCS dataset**, is publicly available on OSF. 
 
-🔗 [Link](https://osf.io/xxxxx)
+🔗 [Link](10.17605/OSF.IO/UMBJ7)
 
 This GitHub repository includes only  **prompt templates**, and **benchmarking code** to reproduce experiments described in the paper.
 
